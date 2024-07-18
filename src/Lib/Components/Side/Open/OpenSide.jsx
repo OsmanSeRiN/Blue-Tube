@@ -1,41 +1,24 @@
 import React from 'react'
 import { Box, Button, VStack } from '@chakra-ui/react'
-import { IoMdHome } from 'react-icons/io';
-import { SiYoutubeshorts } from "react-icons/si";
-import { PiVideo } from "react-icons/pi";
-import { GiBackwardTime } from "react-icons/gi";
+import { Text } from '../../../Model/Content/Text';
+import { Color } from '../../../Model/Content/Color';
 
 const OpenSide = () => {
+    const sideItems = Text.sideItems;
     return (
         <>
-            <Box pl={"5%"} pt='2' mb={"3"}>
-                <VStack align={"left"} gap={1} >
-                    <Box h={"40px"}>
-                        <Button colorScheme='White' justifyContent={"flex-start"} gap={5} textAlign={"left"} fontSize={25} _hover={{ bg: "#272727" }} w={"100%"} >
-                            <IoMdHome />
-                            <span style={{ fontSize: "15px", fontWeight: "400" }}>Ana Sayfa</span>
-                        </Button>
-                    </Box>
-                    <Box h={"40px"}>
-                        <Button colorScheme='White' justifyContent={"flex-start"} gap={5} textAlign={"left"} fontSize={25} _hover={{ bg: "#272727" }} w={"100%"} >
-                            <SiYoutubeshorts />
-                            <span style={{ fontSize: "15px", fontWeight: "400" }}>Shorts</span>
-                        </Button>
-                    </Box>
-                    <Box h={"40px"}>
-                        <Button colorScheme='White' justifyContent={"flex-start"} gap={5} textAlign={"left"} fontSize={25} _hover={{ bg: "#272727" }} w={"100%"} >
-                            <PiVideo />
-                            <span style={{ fontSize: "14px", fontWeight: "400" }}>Abonelikler</span>
-                        </Button>
-                    </Box>
-                    <Box h={"40px"}>
-                        <Button colorScheme='White' justifyContent={"flex-start"} gap={5} textAlign={"left"} fontSize={25} _hover={{ bg: "#272727" }} w={"100%"} >
-                            <GiBackwardTime />
-                            <span style={{ fontSize: "15px", fontWeight: "400" }}>Geçmiş</span>
-                        </Button>
-                    </Box>
+            <Box pl={"16px"} pt='2' mb={"3"}>
+                <VStack align={"left"} gap={1}>
+                    {sideItems.map((item, index) => (
+                        <Box h={"40px"} key={index}>
+                            <Button colorScheme='White' justifyContent={"flex-start"} gap={5} textAlign={"left"} fontSize={25} _hover={{ bg: Color.hoverColor }} w={"100%"}>
+                                {item.icon}
+                                <span style={{ fontSize: "15px", fontWeight: "400" }}>{item.title}</span>
+                            </Button>
+                        </Box>
+                    ))}
+                    <hr color={Color.detailColor} style={{ height: "0.1px", marginTop: "15px" }} />
                 </VStack>
-                <hr color='#0f0f0f' style={{ height: "0.1px",marginTop:"15px" }}/>
             </Box>
         </>
     )

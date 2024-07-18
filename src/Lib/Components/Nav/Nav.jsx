@@ -15,10 +15,10 @@ const Nav = () => {
   }
 
   return (
-    <Wrap pl={"1%"} spacing={"22%"} pt='3'>
+    <Wrap pl={"15px"} spacing={"22%"} pt='3'>
       <WrapItem>
        <Box>
-       <Button colorScheme='white' fontSize={"25px"} _hover={{ bg: "#272727" }} variant={"solid"} borderRadius={"50%"} w={"3vh"} onClick={()=>{openSideFunction()}}>
+       <Button colorScheme='white' fontSize={"25px"} _hover={{ bg: "#272727" }} variant={"solid"} borderRadius={"50%"} ml={"10px"} w={"40px"}  onClick={()=>{openSideFunction()}}>
           <HamburgerIcon />
         </Button>
        </Box>
@@ -32,10 +32,10 @@ const Nav = () => {
       </WrapItem>
       <WrapItem>
         <InputGroup w={"40vw"} maxW={"600px"}>
-          <InputRightElement color={"white"} bg={"#272727"} borderWidth={1} borderRightRadius={"20"} borderColor={"#303030"}>
+          <Input type='search'  borderRadius={20} borderColor={"#303030"} style={{borderRightColor:"#303030",}} placeholder='Ara' color={"white"}></Input>
+          <InputRightAddon color={"white"} bg={"#272727"} borderWidth={1} borderRightRadius={"20"} borderColor={"#303030"}>
             <SearchIcon></SearchIcon>
-          </InputRightElement>
-          <Input type='search' borderRadius={20} borderColor={"#303030"} _hover={{borderColor:"#303030"}} placeholder='Ara' color={"white"}></Input>
+          </InputRightAddon>
         </InputGroup>
       </WrapItem>
     </Wrap>

@@ -4,38 +4,26 @@ import { IoMdHome } from 'react-icons/io';
 import { SiYoutubeshorts } from "react-icons/si";
 import { PiVideo } from "react-icons/pi";
 import { GiBackwardTime } from "react-icons/gi";
+import { Text } from '../../../Model/Content/Text';
+import { Color } from '../../../Model/Content/Color';
 
 const CloseSide = () => {
+
+    const sideItems = Text.sideItems;
+
     return (
         <>
-            <Box pl={"2%"} pt='2' mb={"3"}>
+            <Box pl={"14px"} pt='2' mb={"3"}>
                 <VStack align={"left"} gap={0}>
-                    <Box h={"74px"} w={"64px"}>
-                        <Button colorScheme='white' fontSize={25} display="flex" flexDirection="column" alignItems="center" justifyContent="center" _hover={{ bg: "#272727" }} w={"100%"} h={"100%"}>
-                            <IoMdHome />
-                            <span style={{ fontSize: "10px", fontWeight: "400" }}>Ana Sayfa</span>
+                  {sideItems.map((item, index) => (
+                    <Box h={"74px"} w={"64px"} key={index}>
+                        <Button colorScheme='white' fontSize={25} display="flex" flexDirection="column" alignItems="center" justifyContent="center" _hover={{ bg: Color.hoverColor }} w={"100%"} h={"100%"} >
+                            {item.icon}
+                            <span style={{ fontSize: "10px", fontWeight: "400" }}>{item.title}</span>
                         </Button>
                     </Box>
-                    <Box h={"74px"} w={"64px"}>
-                        <Button colorScheme='white' fontSize={25} display="flex" flexDirection="column" alignItems="center" justifyContent="center" _hover={{ bg: "#272727" }} w={"100%"} h={"100%"}>
-                            <SiYoutubeshorts />
-                            <span style={{ fontSize: "10px", fontWeight: "400" }}>Shorts</span>
-                        </Button>
-                    </Box>
-                    <Box h={"74px"} w={"64px"}>
-                        <Button colorScheme='white' fontSize={25} display="flex" flexDirection="column" alignItems="center" justifyContent="center" _hover={{ bg: "#272727" }} w={"100%"} h={"100%"}>
-                            <PiVideo />
-                            <span style={{ fontSize: "10px", fontWeight: "400" }}>Abonelikler</span>
-                        </Button>
-                    </Box>
-                    <Box h={"74px"} w={"64px"}>
-                        <Button colorScheme='white' fontSize={25} display="flex" flexDirection="column" alignItems="center" justifyContent="center" _hover={{ bg: "#272727" }} w={"100%"} h={"100%"}>
-                            <GiBackwardTime />
-                            <span style={{ fontSize: "10px", fontWeight: "400" }}>Geçmiş</span>
-                        </Button>
-                    </Box>
+                    ))}
                 </VStack>
-                <hr color='#0f0f0f' width="64px" style={{ height: "0.1px", marginTop: "15px" }} />
             </Box>
         </>
     )

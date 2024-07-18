@@ -7,6 +7,21 @@
   pointer-events: none;
 }
 
+.App-background{
+  background-color: #0f0f0f;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #0f0f0f;
+  color: white;
+}
+
+#root {
+  min-height: 100%;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
