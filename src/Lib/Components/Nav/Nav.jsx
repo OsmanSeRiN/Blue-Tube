@@ -15,7 +15,7 @@ const Nav = () => {
   }
 
   return (
-    <Wrap pl={"15px"} spacing={"22%"} pt='3'>
+    <Wrap spacing={"22%"} pt={3} pb={1} pl={"14px"}>
       <WrapItem>
        <Box>
        <Button colorScheme='white' fontSize={"25px"} _hover={{ bg: "#272727" }} variant={"solid"} borderRadius={"50%"} ml={"10px"} w={"40px"}  onClick={()=>{openSideFunction()}}>

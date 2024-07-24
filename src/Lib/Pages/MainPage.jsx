@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem } from '@chakra-ui/react'
+import { Box, Grid, GridItem, useBreakpointValue } from '@chakra-ui/react'
 import React from 'react'
 import Side from '../Components/Side/Side'
 import Nav from '../Components/Nav/Nav'
@@ -9,6 +9,9 @@ import { Color } from '../Model/Content/Color'
 const MainPage = () => {
 
   const sideParam = useSelector((state) => state.data.appStatus);
+  const display = useBreakpointValue({base:"none", sm:"block"})
+  const sideWidthParam = sideParam ? "200px":"100px"
+  const sideWidth = useBreakpointValue({ base: "0px", sm: sideWidthParam, md: sideWidthParam});
   return (
     <>
       <Box bg={Color.bgColor}>
@@ -16,19 +19,19 @@ const MainPage = () => {
           templateAreas={`"nav nav"
                   "side main"
                   "side footer"`}
-          gridTemplateRows={'7vh 1fr 5vh'}
-          gridTemplateColumns={`${sideParam.onSide ? "200px" : "100px"} 1fr`}
+          gridTemplateRows={'8vh 1fr 5vh'}
+          gridTemplateColumns={`${sideWidth} 1fr`}
           h='100vh'
-          bg={"#0f0f0f"}
-          gap='1'
+          bg={Color.bgColor}
+          gap='0'
           color=''
           fontWeight='bold'
         >
           <GridItem bg={Color.bgColor} area={'nav'}>
             <Nav />
           </GridItem>
-          <GridItem bg={Color.bgColor} area={'side'}>
-            <Side />
+          <GridItem bg={Color.bgColor} area={'side'} display={display}>
+             <Side/>
           </GridItem>
           <GridItem bg={Color.bgColor} area={'main'}>
             <Main />

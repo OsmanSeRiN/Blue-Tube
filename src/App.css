@@ -5,18 +5,10 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  color: #5c5c5c;
 }
 
-.App-background{
-  background-color: #0f0f0f;
-}
 
-html, body {
-  height: 100%;
-  margin: 0;
-  background-color: #0f0f0f;
-  color: white;
-}
 
 #root {
   min-height: 100%;

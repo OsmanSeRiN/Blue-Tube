@@ -6,12 +6,14 @@ export const data = createSlice({
         userData:{},
         appStatus:{
            selectedSide:"",
-           onSide:false
-        }
+           onSide:false,
+        },
+        videoData:[]
     },
     reducers:{
        selectedSideItem:(state,action)=>{
           state.appStatus.selectedSide = action.payload
+          console.log(action.payload)
        },
        openSide:(state,action)=>{
          state.appStatus.onSide = action.payload
@@ -21,3 +23,17 @@ export const data = createSlice({
 })
 
 export const {selectedSideItem,openSide} = data.actions
+
+/*
+
+Video Datası İçin Gereken Alanlar:
+
+   1-Video Resmi Linki
+   2-Başlık
+   3-Yayınlayan Kanal ID
+   4-Görüntülenme Sayısı
+   5-Yayın Tarihi
+   6-Video Linki
+   7-Taglar
+
+*/

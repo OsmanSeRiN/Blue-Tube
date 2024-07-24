@@ -9,7 +9,7 @@ function App() {
   return (
     <ChakraProvider>
       <Provider store={store}>
-        <Box bg={Color.bgColor} className='App-background'>
+        <Box bg={Color.bgColor}>
           <MainPage/>
         </Box>
       </Provider>

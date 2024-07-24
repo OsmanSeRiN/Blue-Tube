@@ -13,7 +13,7 @@ const CloseSide = () => {
 
     return (
         <>
-            <Box pl={"14px"} pt='2' mb={"3"}>
+            <Box pl={"12px"} pt='2' mb={"3"}>
                 <VStack align={"left"} gap={0}>
                   {sideItems.map((item, index) => (
                     <Box h={"74px"} w={"64px"} key={index}>

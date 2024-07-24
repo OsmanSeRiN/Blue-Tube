@@ -3,13 +3,23 @@ import React from 'react'
 import image from "../../../../Images/Furkan Emirce.jpg"
 import { IoMdCheckmarkCircle, IoMdMore } from 'react-icons/io'
 import { Color } from '../../../Model/Content/Color'
+import { TbPlayerPlayFilled } from 'react-icons/tb'
+import "./CardTemplate.css"
 
 const CardTemplate = () => {
+
   return (
     <Box>
       <Card bg={"#0f0f0f"}>
-        <CardBody>
+        <CardBody cursor={"pointer"}>
           <Image src={image} p={0} borderRadius={"15px"} />
+          <div className='container' w={"100%"}>
+          <div className='card'>
+          <Button position={"absolute"} borderRadius={"15px"} w={"90%"} h={"85%"} fontSize={"xxx-large"} colorScheme={Color.textColor} top="50%" left="50%" transform="translate(-50%, -50%)"  bgColor={Color.hoverStartIconBg} >
+            <TbPlayerPlayFilled />
+          </Button>
+          </div>
+          </div>
         </CardBody>
       </Card>
       <Wrap spacing={0} pt={3} pl={3}>

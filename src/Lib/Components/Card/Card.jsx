@@ -7,7 +7,7 @@ const Card = () => {
     <SimpleGrid
       spacing={3}
       templateColumns='repeat(auto-fill, minmax(300px, 1fr))'
-      px={5}
+      px={2}
     >
       <CardTemplate/>
       <CardTemplate/>
