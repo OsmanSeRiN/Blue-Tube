@@ -4,6 +4,7 @@ import { Text } from '../../../Model/Content/Text';
 import { Color } from '../../../Model/Content/Color';
 import { useDispatch } from 'react-redux';
 import { selectedSideItem } from '../../../Model/Redux/Reducer/Data';
+import { Param } from '../../../Model/Content/Param';
 
 const OpenSide = () => {
     const sideItems = Text.sideItems;
@@ -16,13 +17,13 @@ const OpenSide = () => {
 
     return (
         <>
-            <Box pl={"16px"} pt='2' mb={"3"}>
+            <Box pl={"16px"} pt='2' mb={"3"} fontFamily={Param.fontFamily}>
                 <VStack align={"left"} gap={1}>
                     {sideItems.map((item, index) => (
                         <Box h={"40px"} key={index}>
                             <Button onClick={()=>selectedSideItem(item.title)} colorScheme='White' justifyContent={"flex-start"} gap={5} textAlign={"left"} fontSize={25} _hover={{ bg: Color.hoverColor }} w={"100%"}>
                                 {item.icon}
-                                <span style={{ fontSize: "15px", fontWeight: "400" }}>{item.title}</span>
+                                <span style={{ fontSize: Param.tagFontSize, fontWeight: Param.sideFontWeight }}>{item.title}</span>
                             </Button>
                         </Box>
                     ))}

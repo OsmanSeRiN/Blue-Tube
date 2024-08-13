@@ -8,6 +8,7 @@ const Card = () => {
       spacing={3}
       templateColumns='repeat(auto-fill, minmax(300px, 1fr))'
       px={2}
+
     >
       <CardTemplate/>
       <CardTemplate/>

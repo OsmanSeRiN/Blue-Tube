@@ -25,7 +25,6 @@ export const data = createSlice({
 export const {selectedSideItem,openSide} = data.actions
 
 /*
-
 Video Datası İçin Gereken Alanlar:
 
    1-Video Resmi Linki

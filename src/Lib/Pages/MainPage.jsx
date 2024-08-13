@@ -1,17 +1,29 @@
 import { Box, Grid, GridItem, useBreakpointValue } from '@chakra-ui/react'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Side from '../Components/Side/Side'
 import Nav from '../Components/Nav/Nav'
 import { useSelector } from 'react-redux'
 import Main from '../Components/Main/Main'
 import { Color } from '../Model/Content/Color'
+import { Param } from '../Model/Content/Param'
 
 const MainPage = () => {
 
   const sideParam = useSelector((state) => state.data.appStatus);
-  const display = useBreakpointValue({base:"none", sm:"block"})
-  const sideWidthParam = sideParam ? "200px":"100px"
-  const sideWidth = useBreakpointValue({ base: "0px", sm: sideWidthParam, md: sideWidthParam});
+  const display = useBreakpointValue({base:"none", sm:"none",md:"block"})
+  const [width,setWidth] = useState()
+  console.log("Side parametresi " + sideParam ? "200px":"100px" )
+
+     const sideWidthParam = useBreakpointValue({
+      base: "0px",
+      sm:"0px",
+      md: sideParam.onSide ? "200px" : "100px"
+    });
+
+    useEffect(() => {
+      setWidth(sideWidthParam);
+    }, [sideWidthParam, sideParam]);
+
   return (
     <>
       <Box bg={Color.bgColor}>
@@ -20,18 +32,21 @@ const MainPage = () => {
                   "side main"
                   "side footer"`}
           gridTemplateRows={'8vh 1fr 5vh'}
-          gridTemplateColumns={`${sideWidth} 1fr`}
+          gridTemplateColumns={`${width} 1fr`}
           h='100vh'
           bg={Color.bgColor}
           gap='0'
           color=''
           fontWeight='bold'
+          fontFamily={Param.fontFamily}
         >
           <GridItem bg={Color.bgColor} area={'nav'}>
             <Nav />
           </GridItem>
-          <GridItem bg={Color.bgColor} area={'side'} display={display}>
-             <Side/>
+          <GridItem bg={Color.bgColor} area={'side'} >
+            <Box display={display}>
+              <Side/>
+            </Box>
           </GridItem>
           <GridItem bg={Color.bgColor} area={'main'}>
             <Main />

@@ -1,9 +1,10 @@
 import React from 'react'
+import { Param } from '../../../Model/Content/Param'
 
 const Mobileside = () => {
     return (
         <>
-            <Box pl={"16px"} pt='2' mb={"3"}>
+            <Box pl={"16px"} pt='2' mb={"3"} >
                 <VStack align={"left"} gap={1}>
                     {sideItems.map((item, index) => (
                         <Box h={"40px"} key={index}>

@@ -1,12 +1,17 @@
-import { Avatar, Box, Button, Card, CardBody, Grid, GridItem, Heading, Image, Text, Wrap, WrapItem } from '@chakra-ui/react'
+import { Avatar, Box, Button, Card, CardBody, Grid, GridItem, Heading, Image, Menu, MenuButton, MenuItem, MenuList, Stack, Text, Wrap, WrapItem } from '@chakra-ui/react'
 import React from 'react'
 import image from "../../../../Images/Furkan Emirce.jpg"
 import { IoMdCheckmarkCircle, IoMdMore } from 'react-icons/io'
 import { Color } from '../../../Model/Content/Color'
 import { TbPlayerPlayFilled } from 'react-icons/tb'
 import "./CardTemplate.css"
+import { Text as CustomText } from '../../../Model/Content/Text';
+import VideoMenu from './Video Options Menu/VideoMenu'
+
 
 const CardTemplate = () => {
+
+  const menuItems = CustomText.menuItems;
 
   return (
     <Box>
@@ -49,9 +54,22 @@ const CardTemplate = () => {
           </Grid>
         </WrapItem>
         <WrapItem display={"flex"} justify={"end"}>
-          <Button colorScheme='white' fontSize={"xl"} borderRadius={"50%"} w={"40px"} p={0} _hover={{bg: Color.hoverColor}}>
-            <IoMdMore />
-          </Button>
+         <Menu>
+            <MenuButton as={Button} colorScheme='white' fontSize={"xl"} borderRadius={"50%"} w={"40px"} p={0} _hover={{bg: Color.hoverColor}}>
+              <Button colorScheme='white' fontSize={"xl"} borderRadius={"50%"} w={"40px"} p={0} _hover={{bg: Color.hoverColor}}>
+                <IoMdMore />
+              </Button>
+            </MenuButton>
+            <MenuList bg={Color.hoverColor} pt={15} pb={15} border={0}>
+               {
+                menuItems.map((item,index)=>(
+                  <VideoMenu menuItem={item} key={index} />
+                ))
+
+               }
+            </MenuList>
+         </Menu>
+
         </WrapItem>
       </Wrap>
     </Box>
