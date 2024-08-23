@@ -1,5 +1,4 @@
-import React from 'react'
-import { Param } from '../../../Model/Content/Param'
+import React from 'react';
 
 const Mobileside = () => {
     return (

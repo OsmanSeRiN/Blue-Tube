@@ -29,6 +29,11 @@ export const Text = {
             selectedIcon:<RiPlayList2Line />,
         },
         {
+            title: "Daha sonra izle",
+            icon: <IoTimeOutline />,
+            selectedIcon:<IoTimeOutline />,
+        },
+        {
             title: "Geçmiş",
             icon: <GiBackwardTime/>,
             selectedIcon:<GiBackwardTime/>,

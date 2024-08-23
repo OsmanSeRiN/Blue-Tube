@@ -1,4 +1,4 @@
-import { Avatar, Box, Button, Card, CardBody, Grid, GridItem, Heading, Image, Menu, MenuButton, MenuItem, MenuList, Stack, Text, Wrap, WrapItem } from '@chakra-ui/react'
+import { Avatar, Box, Button, Card, CardBody, Grid, GridItem, Heading, Image, Menu, MenuButton,  MenuList,  Text, Wrap, WrapItem } from '@chakra-ui/react'
 import React from 'react'
 import image from "../../../../Images/Furkan Emirce.jpg"
 import { IoMdCheckmarkCircle, IoMdMore } from 'react-icons/io'

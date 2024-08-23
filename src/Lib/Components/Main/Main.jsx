@@ -1,17 +1,20 @@
 import React from 'react'
 import Card from '../Card/Card'
-import { Box } from '@chakra-ui/react'
+import { Box, VStack } from '@chakra-ui/react'
 import Tags from '../Tag/Tags'
 
 
 const Main = () => {
   return (
-    <>
-      <Box h={"5vh"} pl={"20px"}>
+    <VStack  spacing={2}
+    align='stretch'>
+       <Box h={"5vh"} pl={"25px"} pt={2} mb={2}>
         <Tags/>
       </Box>
-      <Card/>
-    </>
+      <Box>
+       <Card/>
+      </Box>
+    </VStack>
   )
 }
 

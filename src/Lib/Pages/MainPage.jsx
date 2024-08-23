@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux'
 import Main from '../Components/Main/Main'
 import { Color } from '../Model/Content/Color'
 import { Param } from '../Model/Content/Param'
+import MobileNav from '../Components/Nav/MobileNav'
 
 const MainPage = () => {
 
@@ -19,6 +20,18 @@ const MainPage = () => {
       sm:"0px",
       md: sideParam.onSide ? "200px" : "100px"
     });
+
+    const navWidth = useBreakpointValue({
+      base:"none",
+      sm:"none",
+      md:"100%"
+    })
+
+    const mobileNavWidth = useBreakpointValue({
+      base:"100%",
+      sm:"100%",
+      md:"none"
+    })
 
     useEffect(() => {
       setWidth(sideWidthParam);
@@ -41,7 +54,12 @@ const MainPage = () => {
           fontFamily={Param.fontFamily}
         >
           <GridItem bg={Color.bgColor} area={'nav'}>
-            <Nav />
+            <Box display={navWidth}>
+              <Nav/>
+            </Box>
+            <Box mb={"5px"} display={mobileNavWidth}>
+              <MobileNav/>
+            </Box>
           </GridItem>
           <GridItem bg={Color.bgColor} area={'side'} >
             <Box display={display}>
@@ -49,7 +67,7 @@ const MainPage = () => {
             </Box>
           </GridItem>
           <GridItem bg={Color.bgColor} area={'main'}>
-            <Main />
+            <Main/>
           </GridItem>
           <GridItem bg={Color.bgColor} area={'footer'}>
             Footer
